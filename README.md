@@ -1,8 +1,64 @@
-# ML-Projects
-1)Movie Recommendation System: This project implements a movie recommendation system using cosine similarity based on genres. It uses the pandas and scikit-learn libraries to analyze and recommend similar movies from a dataset. Provide a movie title to get top recommendations!
+# AI Travel Planner (Streamlit + Gemini)
 
-2)Sentiment Analysis: This project performs sentiment analysis on Flipkart product reviews to understand customer opinions. It uses Python libraries like pandas, nltk and VADER to clean the data and calculate sentiment scores, providing insights into the overall sentiment distribution(positive, negative and neutral).
+A modern 2025-ready AI travel planner built with Streamlit, Google Gemini, Open-Meteo weather, and exchangerate.host for currency. Designed to be a showcase project for your resume: clean architecture, async APIs, structured AI output, Docker, and optional AWS deployment.
 
-3)Small Language Model Book QnA system: This implementation uses a Small Language Model (SLM) based on DistilBERT fine-tuned on the SQuAD dataset. The model extracts answers from a given book content by tokenizing the input and passing it through a pre-trained transformer. Clone the repo, install dependencies, and run streamlit run slmbkqa.py to use it interactively.
+## Features
+- AI-generated itineraries using Gemini (JSON-first with heuristic fallback)
+- Live geocoding and weather (Open-Meteo)
+- Currency conversion with exchangerate.host
+- Streamlit UI with side-by-side plan + weather
+- Save trips to JSON
+- Dockerfile for container deployment
 
-4)Image classifier: This project implements an image classifier using Convolutional Neural Networks (CNN) with Keras and TensorFlow, trained on the MNIST dataset to recognize handwritten digits. The model preprocesses the images, builds a CNN architecture, and evaluates its performance, achieving high accuracy in digit classification.
+## Setup
+1. Python 3.11+ recommended
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Set environment variables (copy `.env.example`):
+   - `GEMINI_API_KEY`: Your Google Generative AI API key
+   - `TRIPS_DIR` (optional): Where saved trips JSON will go
+
+## Run locally
+```bash
+streamlit run app/main.py
+```
+
+## Docker
+```bash
+docker build -t ai-travel-planner .
+# Replace with your key
+docker run -p 8501:8501 -e GEMINI_API_KEY=YOUR_KEY ai-travel-planner
+```
+
+Then open `http://localhost:8501`.
+
+## AWS Deployment Options
+- **Streamlit Community Cloud** for quick demo
+- **AWS App Runner**: Deploy container directly
+- **AWS Elastic Beanstalk**: Simple web app hosting
+- **AWS EC2**: Self-managed VM running Docker
+
+### App Runner (recommended)
+1. Push image to ECR
+2. Create App Runner service from ECR image
+3. Set env vars (GEMINI_API_KEY, TRIPS_DIR=/app/data/trips)
+
+## Folder Structure
+```
+app/
+  main.py
+  settings.py
+  services/
+    gemini.py
+    weather.py
+    currency.py
+  utils/
+    storage.py
+```
+
+## Notes
+- Keep costs low: uses free weather/currency APIs
+- Gemini model can be upgraded (e.g., `gemini-1.5-pro`) later
+- Enhance with offline caching, map widgets, PDF export
