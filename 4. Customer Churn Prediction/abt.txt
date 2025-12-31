@@ -1,0 +1,37 @@
+Customer Churn Analytics & Forecasting Platform
+-An end-to-end churn intelligence system that combines machine learning, explainable AI, and time-series forecasting to predict customer churn, understand churn drivers, and forecast future churn trends for data-driven retention planning.
+
+Project Highlights
+-End-to-end churn pipeline built with Python, SQL & SQLite
+-Best Model: Logistic Regression
+-Model Performance: AUC = 0.84
+-Explainability: SHAP for churn driver analysis
+-Forecasting: SARIMA lifecycle churn forecasting
+
+Raw Customer Data
+        ↓
+Data Cleaning & Feature Engineering
+        ↓
+SQLite Analytics Warehouse
+        ↓
+ML Training (LR, DT, XGBoost)
+        ↓
+Best Model Selection (AUC Based)
+        ↓
+SHAP Explainability
+        ↓
+SARIMA Churn Forecasting
+
+Tech Stack:
+Category	     Tools
+Programming	   Python
+Database	     SQLite
+ML Models	     Logistic Regression, Decision Tree, XGBoost
+Explainability SHAP
+Forecasting	   SARIMA
+Libraries	     Pandas, NumPy, Scikit-Learn, Statsmodels
+
+How to run:
+Download dataset
+pip install -r requirements.txt
+jupyter notebook churn.ipynb
