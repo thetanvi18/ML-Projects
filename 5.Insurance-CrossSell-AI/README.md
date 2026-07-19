@@ -1,4 +1,4 @@
-# 🛡️ Insurance Cross-Sell Prediction Platform
+# Insurance Cross-Sell Prediction Platform
 
 An end-to-end machine learning application that predicts which existing health insurance customers are likely to purchase vehicle insurance.
 
@@ -129,10 +129,6 @@ docker-compose up --build
 ## Future Improvements
 
 - Deploy the application on AWS
-- Add CI/CD pipeline using GitHub Actions
-- Add user authentication
-- Support automated model retraining
-- Add monitoring and logging for deployed models
 
 ---
 
