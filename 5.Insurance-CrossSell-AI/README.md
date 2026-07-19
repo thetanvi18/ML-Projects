@@ -56,9 +56,10 @@ The project combines Machine Learning, Explainable AI, MLOps, and Generative AI 
 ### Generative AI
 - Gemini 2.5 Flash API
 
-### Deployment
-- Docker
-- Docker Compose
+## Deployment
+
+- Dockerized application deployed on **AWS EC2**
+- FastAPI backend with interactive Streamlit dashboard
 
 ---
 
@@ -126,11 +127,6 @@ docker-compose up --build
 
 ---
 
-## Future Improvements
-
-- Deploy the application on AWS
-
----
 
 ## Author
 
