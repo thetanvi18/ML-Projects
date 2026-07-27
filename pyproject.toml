@@ -1,0 +1,23 @@
+[project]
+name = "ai-travel-planner"
+version = "0.1.0"
+description = "Streamlit AI Travel Planner using Google Gemini, weather, and currency APIs"
+authors = [{ name = "Your Name" }]
+requires-python = ">=3.10"
+readme = "README.md"
+license = { text = "MIT" }
+
+[project.urls]
+Homepage = "https://example.com"
+
+[tool.uv]
+dev-dependencies = [
+  "pytest~=8.0",
+  "ruff~=0.6",
+]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E","F","I","UP","C90"]
